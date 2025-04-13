@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h2>Login</h2>
+<form method="post" action="/login">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required />
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+    <br><br>
+    <input type="hidden" name="redirect" th:value="${param.redirect}" />
+
+    <button type="submit">Login</button>
+</form>
+
+<script th:inline="javascript">
+    console.log("redirect 파라미터:", /*[[${param.redirect}]]*/);
+</script>
+</body>
+</html>
